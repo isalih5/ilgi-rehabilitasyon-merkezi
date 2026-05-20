@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="google-site-verification"
+    content="dKR_gPtitABNuxYVH2IbLyzI-TgXUUn4aaIBSHib308" />
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+  <title>İlgi Özel Eğitim ve Rehabilitasyon Merkezi</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5fbff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #4aa3df;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #dff4ff;
+    }
+
+    .hero {
+      height: 90vh;
+      background:
+        linear-gradient(rgba(74, 163, 223, 0.7),
+          rgba(74, 163, 223, 0.7)),
+        url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1600&auto=format&fit=crop') center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: white;
+      color: #4aa3df;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #dff4ff;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #4aa3df;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card h3 {
+      color: #4aa3df;
+      margin-bottom: 15px;
+    }
+
+    .why-us {
+      background: #eaf7ff;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .why-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact form {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .contact button {
+      background: #4aa3df;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 20px;
+      background: white;
+      flex-wrap: wrap;
+    }
+
+    .social-media a {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      transition: 0.4s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-media a:hover {
+      transform: translateY(-8px) scale(1.1);
+    }
+
+    .instagram {
+      background: linear-gradient(45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888);
+    }
+
+    .facebook {
+      background: #1877f2;
+    }
+
+    .twitter {
+      background: #000;
+    }
+
+    .tiktok {
+      background: #111;
+    }
+
+    footer {
+      background: #4aa3df;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 65px;
+      height: 65px;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      z-index: 9999;
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background: #1ebe5d;
+    }
+
+    @media(max-width:768px) {
+
+      .hero-content h2 {
+        font-size: 34px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      .about,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>İlgi Özel Eğitim</h1>
+
+    <nav>
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero"
+    id="anasayfa">
+
+    <div class="hero-content">
+
+      <h2>Her Çocuk Özeldir</h2>
+
+      <p>
+        Uzman kadromuz ile çocuklarımızın gelişimini destekliyoruz.
+      </p>
+
+      <a href="#iletisim"
+        class="btn">Randevu Al</a>
+
+      <a href="#hakkimizda"
+        class="btn">Detaylı Bilgi</a>
+
+    </div>
+
+  </section>
+
+  <!-- HAKKIMIZDA -->
+
+  <section id="hakkimizda">
+
+    <div class="section-title">
+      <h2>Hakkımızda</h2>
+    </div>
+
+    <div class="about">
+
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+        alt="Özel Eğitim">
+
+      <div>
+
+        <h3>İlgi Özel Eğitim ve Rehabilitasyon Merkezi</h3>
+
+        <p>
+          İlgi Özel Eğitim ve Rehabilitasyon Merkezi olarak çocuklarımızın bireysel gelişim süreçlerini destekleyen modern ve güvenilir bir eğitim kurumu olarak hizmet vermekteyiz.
+        </p>
+
+        <br>
+
+        <p>
+          Uzman öğretmen kadromuz ve deneyimli terapistlerimiz ile her bireyin ihtiyacına özel eğitim programları hazırlıyoruz.
+        </p>
+
+        <br>
+
+        <p>
+          Amacımız çocuklarımızın akademik, sosyal ve bireysel becerilerini güçlendirmek ve özgüvenli bireyler yetiştirmektir.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HİZMETLER -->
+
+  <section id="hizmetler">
+
+    <div class="section-title">
+      <h2>Hizmetlerimiz</h2>
+    </div>
+
+    <div class="services">
+
+      <div class="service-card">
+        <h3>Bireysel Özel Eğitim</h3>
+        <p>Öğrenme güçlüğü ve akademik destek çalışmaları.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Dil ve Konuşma Terapisi</h3>
+        <p>Konuşma ve iletişim becerilerini geliştirme çalışmaları.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Ergoterapi</h3>
+        <p>Motor gelişimi ve günlük yaşam becerilerini destekleme.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Aile Danışmanlığı</h3>
+        <p>Ailelere rehberlik ve gelişim desteği sağlanmaktadır.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Otizm Destek Eğitimi</h3>
+        <p>Otizm spektrum bozukluğu olan bireyler için özel eğitim.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Oyun Terapisi</h3>
+        <p>Duygusal gelişimi destekleyen özel terapi çalışmaları.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Okul Öncesi Destek</h3>
+        <p>Okula hazırlık sürecine destek sağlayan eğitim programları.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Sosyal Beceri Eğitimi</h3>
+        <p>İletişim ve sosyal uyum becerilerini geliştirme çalışmaları.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEDEN BİZ -->
+
+  <section class="why-us">
+
+    <div class="section-title">
+      <h2>Neden Biz?</h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <h3>Uzman Kadro</h3>
+      </div>
+
+      <div class="why-item">
+        <h3>Bireye Özel Eğitim</h3>
+      </div>
+
+      <div class="why-item">
+        <h3>Modern Eğitim Ortamı</h3>
+      </div>
+
+      <div class="why-item">
+        <h3>Aile İletişimi</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- İLETİŞİM -->
+
+  <section id="iletisim">
+
+    <div class="section-title">
+      <h2>İletişim</h2>
+    </div>
+
+    <div class="contact">
+
+      <div>
+
+        <h3>İletişim Bilgileri</h3>
+
+        <br>
+
+        <p><strong>Telefon:</strong> +90 555 009 0343</p>
+
+        <p><strong>E-Posta:</strong>
+          ilgi.rehabilitasyon63@gmail.com
+        </p>
+
+        <p><strong>Adres:</strong>
+          Şanlıurfa / Harran
+        </p>
+
+        <br>
+
+        <iframe
+          src="https://www.google.com/maps?q=Harran+Şanlıurfa&output=embed"
+          width="100%"
+          height="300"
+          style="border:0; border-radius:20px;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+
+      </div>
+
+      <form>
+
+        <input type="text"
+          placeholder="Ad Soyad"
+          required>
+
+        <input type="tel"
+          placeholder="Telefon"
+          required>
+
+        <input type="email"
+          placeholder="E-Posta">
+
+        <textarea rows="5"
+          placeholder="Mesajınız"></textarea>
+
+        <button type="submit">
+          Gönder
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- SOSYAL MEDYA -->
+
+  <div class="social-media">
+
+    <a href="https://www.instagram.com/ilgi.rehabilitasyon63"
+      target="_blank"
+      class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@ilgi.rehabilitasy8"
+      target="_blank"
+      class="tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+
+    <a href="https://x.com/ilgirehbmer"
+      target="_blank"
+      class="twitter">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.facebook.com/"
+      target="_blank"
+      class="facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 İlgi Özel Eğitim ve Rehabilitasyon Merkezi |
+      Tüm Hakları Saklıdır
+    </p>
+
+  </footer>
+
+  <!-- WHATSAPP -->
+
+  <a href="https://wa.me/905550090343?text=Merhaba%20bilgi%20almak%20istiyorum"
+    class="whatsapp-float"
+    target="_blank">
+
+    <i class="fab fa-whatsapp"></i>
+
+  </a>
+
+</body>
+
+</html>
